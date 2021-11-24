@@ -21,9 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(Long id) {
-        return this.userRepository.findAll().stream().filter(user -> {
-            return user.getId().equals(id);
-        }).findFirst().get();
+        return this.userRepository.findById(id);
     }
 
     @Override
